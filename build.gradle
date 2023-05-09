@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
+
+group = 'org.sun.ghosh.java21'
+version = '1.0-SNAPSHOT'
+
+compileJava {
+    options.compilerArgs.addAll(
+            ['--enable-preview',
+             '--add-modules', 'jdk.incubator.concurrent'
+            ])
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
