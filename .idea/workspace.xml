@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="Java 21 - JEP 431 Sequenced Collections Live Code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SequencedCollections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SequencedCollections.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/util/ArrayList.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PYRuoGzFfpfs0SEYIUsU4ONA8f" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -68,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683637629591</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Java 21 - JEP 431 Sequenced Collections Live Code">
+      <created>1683642029913</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683642029913</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
