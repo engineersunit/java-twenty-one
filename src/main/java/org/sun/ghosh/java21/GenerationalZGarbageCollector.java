@@ -28,10 +28,11 @@ public class GenerationalZGarbageCollector {
         System.out.println(String.format("Took %d seconds and %d nanoseconds",
                 between.get(ChronoUnit.SECONDS),
                 between.get(ChronoUnit.NANOS)));
+
+        System.out.println("Free memory after generating objects " + runtime.freeMemory());
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter to proceed to GC");
         String proceed = myObj.nextLine();
-        System.out.println("Free memory after generating objects " + runtime.freeMemory());
         System.gc();
         System.out.println("Free memory after running gc " + runtime.freeMemory());
 
