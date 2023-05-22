@@ -4,7 +4,15 @@ import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.io.File;
+import java.io.StringReader;
 import java.time.format.DateTimeFormatter;
+
+import jakarta.json.JsonReader;
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonException;
+
+import java.lang.StringTemplate;
 
 /**
  * JEP 430: String Templates (Preview)
@@ -75,7 +83,7 @@ public class StringTemplates {
         // Simple use case
         String name = "Sunit Ghosh";
         String programmingLanguage = "Java";
-        String info = STR. "My name is \{name}. I love programming in \{programmingLanguage}.";
+        String info = STR."My name is \{name}. I love programming in \{programmingLanguage}.";
         System.out.println(info);
 
         // Embedded expressions can be strings
@@ -83,12 +91,14 @@ public class StringTemplates {
         String lastName = "Ghosh";
         String fullName = STR. "\{firstName} \{lastName}";
         String sortName = STR. "\{lastName}, \{firstName}";
+        System.out.println(fullName);
+        System.out.println(sortName);
 
         // Embedded expressions can perform arithmetic
         s = STR. "\{x} + \{y} = \{x + y}";
 
         // Embedded expressions can invoke methods
-        s = STR. "You have a \{getOfferType()} waiting for you!";
+        s = STR. "You have a \{getMessageType()} waiting for you!";
         System.out.println(s);
 
         // Embedded expressions can invoke access fields
@@ -107,14 +117,14 @@ public class StringTemplates {
                 (file.exists() ? "does" : "does not") +
                 " exist";
         String msg = STR.
-        "The file \{filePath} \{file.exists() ? " does " : " does not "} exist";
+        "The file \{filePath} \{file.exists() ? "does" : "does not"} exist";
         System.out.println(old);
         System.out.println(msg);
 
-        // an embedded expression can be spread over multiple lines
+        // An embedded expression can be spread over multiple lines
         // in the source file without introducing newlines into the result
         s = STR."The time is \{
-        // The java.time.format package is very useful
+        // Adding a comment: using java.time.format package
                     DateTimeFormatter
                             .ofPattern("HH:mm:ss")
                             .format(LocalTime.now())
@@ -123,19 +133,19 @@ public class StringTemplates {
 
         // Embedded expressions can be postfix increment expressions
         int index = 0;
-        s = STR."\{index++}, \{index++}, \{index++}, \{index++}";
+        s = STR."\{index++}, \{index--}, \{index++}, \{index--}";
         System.out.println(s);
 
-        // Embedded expression is a (nested) template expression
-        String[] fruit = { "apples", "oranges", "peaches" };
-        s = STR."\{fruit[0]}, \{
-            STR."\{fruit[1]}, \{fruit[2]}"
-            }";
+        // Embedded expression in a (nested) template expression
+        String[] skills = { "Java", "Scala", "Groovy" };
+        s = STR."\{skills[0]}, \{
+                                STR."\{skills[1]}, \{skills[2]}"
+                                }";
         System.out.println(s);
 
         // Multi-line template expressions
-        String title = "My Web Page";
-        String text  = "Hello, world";
+        String title = "My Java Blog";
+        String text  = "Hello, Java 21";
         String html = STR."""
         <html>
           <head>
@@ -148,12 +158,12 @@ public class StringTemplates {
         """;
         System.out.println(html);
 
-        String custName    = "Joan Smith";
+        String userName    = "Sunit Ghosh";
         String phone   = "555-123-4567";
-        String address = "1 Maple Drive, Anytown";
+        String address = "India, Earth";
         String json = STR."""
         {
-            "name":    "\{custName}",
+            "name":    "\{userName}",
             "phone":   "\{phone}",
             "address": "\{address}"
         }
@@ -161,7 +171,7 @@ public class StringTemplates {
         System.out.println(json);
 
 
-
+        // Formatting in a tabular format
         Rectangle[] zone = new Rectangle[] {
                 new Rectangle("Alfa", 17.8, 31.4),
                 new Rectangle("Bravo", 9.6, 12.4),
@@ -177,9 +187,37 @@ public class StringTemplates {
         System.out.println(table);
 
 
+        var JSON = StringTemplate.Processor.of(
+                    (StringTemplate st) -> {
+            try (JsonReader jsonReader = Json.createReader(
+                    new StringReader(st.interpolate()))) {
+                return jsonReader.readObject();
+            }
+        }
+        );
+
+        userName = "Sunit Ghosh";
+        phone   = "555-123-4567";
+        address = "India, Earth";
+        JsonObject doc = JSON."""
+        {
+            "name":    "\{userName}",
+            "phone":   "\{phone}",
+            "address": "\{address}"
+        };
+        """;
+
+        System.out.println(doc.getClass());
+        System.out.println("String Template to generate a JSON " +
+                            "from a given String");
+        System.out.println(doc);
+
+
+
+
     }
 
-    private static String getOfferType() {
+    private static String getMessageType() {
         return "proposal";
     }
 
