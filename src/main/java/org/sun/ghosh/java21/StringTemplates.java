@@ -168,6 +168,7 @@ public class StringTemplates {
             "address": "\{address}"
         }
         """;
+
         System.out.println(json);
 
 
@@ -186,6 +187,21 @@ public class StringTemplates {
             """;
         System.out.println(table);
 
+        String jsonStringFormat = """
+            {
+                "userName": "%s",
+                "phone"   : "%s",
+                "address" : "%s"
+            }
+            """.formatted(userName, phone, address);
+
+        JsonObject docFromStringFormatted = null;
+        try (JsonReader jsonReader = Json.createReader(
+                new StringReader(jsonStringFormat))) {
+            docFromStringFormatted =  jsonReader.readObject();
+        }
+        System.out.println(docFromStringFormatted);
+
 
         var JSON = StringTemplate.Processor.of(
                     (StringTemplate st) -> {
@@ -199,12 +215,13 @@ public class StringTemplates {
         userName = "Sunit Ghosh";
         phone   = "555-123-4567";
         address = "India, Earth";
+
         JsonObject doc = JSON."""
         {
             "name":    "\{userName}",
             "phone":   "\{phone}",
             "address": "\{address}"
-        };
+        }
         """;
 
         System.out.println(doc.getClass());
