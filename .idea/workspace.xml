@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="Java 21 - JEP 430: String Templates Generate JSON Object">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/ObjectHash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SimpleHelloWorld.java" afterDir="false" />
+    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="Java 21 Objects toIdentityString()">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/UnnamedPatternsVariables.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/GCTest.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/GCTest.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StringTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StringTemplates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/ObjectHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/ObjectHash.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +40,12 @@
     <setting file="jrt://C:/Program Files/Java/jdk-21!/java.management/java/lang/management/ManagementFactory.class" root0="SKIP_INSPECTION" />
     <setting file="jrt://C:/Program Files/Java/jdk-21!/java.management/java/lang/management/MemoryManagerMXBean.class" root0="SKIP_INSPECTION" />
     <setting file="jrt://C:/Program Files/Java/jdk-21!/java.management/java/lang/management/PlatformManagedObject.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
     <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/lang/StringTemplate.java" root0="SKIP_INSPECTION" />
     <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/lang/System.java" root0="SKIP_INSPECTION" />
     <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/util/ArrayList.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/util/Arrays.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/util/Objects.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -126,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684771363544</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Java 21 Objects toIdentityString()">
+      <created>1685447347884</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685447347884</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +153,7 @@
     <MESSAGE value="Java 21 - JEP 439: Generational ZGC Live Code" />
     <MESSAGE value="Java 21 - JEP 430: String Templates (Preview)" />
     <MESSAGE value="Java 21 - JEP 430: String Templates Generate JSON Object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Java 21 - JEP 430: String Templates Generate JSON Object" />
+    <MESSAGE value="Java 21 Objects toIdentityString()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java 21 Objects toIdentityString()" />
   </component>
 </project>

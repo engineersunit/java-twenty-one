@@ -46,7 +46,7 @@ public class ObjectHash {
         StringTemplate st = RAW. """
                 My Building
                    String - \{myBuilding.toString()}
-                   Overidden Hash Code - \{myBuilding.hashCode()}
+                   Overridden Hash Code - \{myBuilding.hashCode()}
                    System Hash Code - \{Objects.toIdentityString(myBuilding)}
                 """;
 
@@ -59,7 +59,7 @@ public class ObjectHash {
         String buildingFormat = """
                 My Building
                    String - %s
-                   Overidden Hash Code - %s
+                   Overridden Hash Code - %s
                    System Hash Code - %s
                 """;
         System.out.println(String.format(buildingFormat,
