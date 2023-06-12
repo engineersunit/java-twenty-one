@@ -36,7 +36,7 @@ public class UnnamedPatternsVariables {
         Building destination = new Building("Diamond Heights",
                                         new GeoLocation(17.43543, 78.47551, 5),
                                         BuildingType.APARTMENT);
-        // Earlier code does not use Color c
+        // Earlier code does not use BuildingType type
         if (destination instanceof Building(String s,
                                             GeoLocation loc,
                                             BuildingType type)) {
@@ -45,7 +45,8 @@ public class UnnamedPatternsVariables {
                             s, loc.latitude, loc.longitude));
         }
 
-        // New Feature code can use Color _
+        // New Feature code can use BuildingType _ and
+        // GeoLocation altitude
         /* The unnamed pattern is denoted by an underscore character _ (U+005F)
            It allows the type and name of a record component to
            be elided in pattern matching
