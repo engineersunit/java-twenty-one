@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="JEP 443: Unnamed Patterns and Variables is available in &#10;OpenJDK JDK 21 Early-Access Build #24">
+    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="JEP 445: Unnamed Classes and Instance Main Methods (Preview) is available in &#10;OpenJDK JDK 21 Early-Access Build #26">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SimpleHelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SimpleHelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/UnnamedPatternsVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/UnnamedPatternsVariables.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +49,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2PYRuoGzFfpfs0SEYIUsU4ONA8f" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -62,6 +64,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "main",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
@@ -141,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685621986059</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="JEP 445: Unnamed Classes and Instance Main Methods (Preview) is available in &#10;OpenJDK JDK 21 Early-Access Build #26">
+      <created>1686550253698</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686550253699</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +172,7 @@
     <MESSAGE value="Java 21 - JEP 430: String Templates Generate JSON Object" />
     <MESSAGE value="Java 21 Objects toIdentityString()" />
     <MESSAGE value="JEP 443: Unnamed Patterns and Variables is available in &#10;OpenJDK JDK 21 Early-Access Build #24" />
-    <option name="LAST_COMMIT_MESSAGE" value="JEP 443: Unnamed Patterns and Variables is available in &#10;OpenJDK JDK 21 Early-Access Build #24" />
+    <MESSAGE value="JEP 445: Unnamed Classes and Instance Main Methods (Preview) is available in &#10;OpenJDK JDK 21 Early-Access Build #26" />
+    <option name="LAST_COMMIT_MESSAGE" value="JEP 445: Unnamed Classes and Instance Main Methods (Preview) is available in &#10;OpenJDK JDK 21 Early-Access Build #26" />
   </component>
 </project>
