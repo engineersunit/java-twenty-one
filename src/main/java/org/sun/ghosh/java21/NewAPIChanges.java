@@ -1,3 +1,6 @@
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
 void main(){
 
         // JDK-8302686 Add repeat methods to StringBuilder/StringBuffer
@@ -57,4 +60,28 @@ void main(){
         }
         """;
         System.out.println(emojiJSON);
+
+        // Regex for emoji
+        /**
+         * Matcher emojiP   = Pattern.compile("\\p{IsEmoji}").matcher("");
+         * Matcher emojiPP  = Pattern.compile("\\p{IsEmoji_Presentation}").matcher("");
+         * Matcher emojiMP  = Pattern.compile("\\p{IsEmoji_Modifier}").matcher("");
+         * Matcher emojiMBP = Pattern.compile("\\p{IsEmoji_Modifier_Base}").matcher("");
+         * Matcher emojiCP  = Pattern.compile("\\p{IsEmoji_Component}").matcher("");
+         */
+        Pattern emojiPattern = Pattern
+                                .compile("\\p{IsEmoji}");
+
+        Matcher emojiMatcher = emojiPattern
+                                .matcher("☕");
+        System.out.println(emojiMatcher.matches());//true
+
+        String comment = "I ❤️ ☕ Code";
+        boolean containsEmoji = comment
+                                .codePoints()
+                                .mapToObj(c -> (char) c)
+                                .anyMatch(c -> emojiPattern
+                                    .matcher(String.valueOf(c))
+                                    .matches());
+        System.out.println(containsEmoji);//true
         }
