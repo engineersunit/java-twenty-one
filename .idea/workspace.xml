@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="Java 21 Makes coding Emoji 😊 based logic easier via JDK-8303018 - Unicode Emoji Properties">
+    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="Java 21 Makes coding Emoji 😊 based logic easier to use with Regular Expression via JDK-8305107 - Emoji related binary properties in RegEx">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/PatternMatchSwitch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687671700454</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Java 21 Makes coding Emoji 😊 based logic easier to use with Regular Expression via JDK-8305107 - Emoji related binary properties in RegEx">
+      <created>1688037978878</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1688037978878</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +188,7 @@
     <MESSAGE value="JEP 443: Unnamed Patterns and Variables is available in &#10;OpenJDK JDK 21 Early-Access Build #24" />
     <MESSAGE value="JEP 445: Unnamed Classes and Instance Main Methods (Preview) is available in &#10;OpenJDK JDK 21 Early-Access Build #26" />
     <MESSAGE value="Java 21 Makes coding Emoji  based logic easier via JDK-8303018 - Unicode Emoji Properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Java 21 Makes coding Emoji  based logic easier via JDK-8303018 - Unicode Emoji Properties" />
+    <MESSAGE value="Java 21 Makes coding Emoji  based logic easier to use with Regular Expression via JDK-8305107 - Emoji related binary properties in RegEx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java 21 Makes coding Emoji  based logic easier to use with Regular Expression via JDK-8305107 - Emoji related binary properties in RegEx" />
   </component>
 </project>
