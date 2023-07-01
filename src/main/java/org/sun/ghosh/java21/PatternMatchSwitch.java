@@ -1,11 +1,13 @@
 /**
- * JEP 441: Pattern Matching for switch
+ * JEP 441: Pattern Matching for Switch
  *      https://openjdk.org/jeps/441
  * JDK-8300543 Compiler Implementation for Pattern Matching for switch
  *      https://git.openjdk.org/jdk/commit/eaa80ad08c949a05abcfa48897654ed52139145b
  */
 
 import static java.lang.System.out;
+
+// JEP 445: Unnamed Classes and Instance Main Methods (Preview)
 void main(){
         out.println(formatValue("Java 21"));
         out.println(format21Value(Integer.MAX_VALUE));
@@ -18,7 +20,11 @@ void main(){
         exhaustiveSwitchWithBetterEnumSupport(IndoorGame.PUZZLE);
 }
 
-// Prior to Java 21
+/**
+ * Prior to Java 21 -
+ * Used chained if-else with
+ * instanceof operator
+ */
 static String formatValue(Object obj) {
         String formatted = "Unknown";
         if (obj instanceof Integer i) {
@@ -33,7 +39,9 @@ static String formatValue(Object obj) {
         return formatted;
     }
 
-// Java 21
+/**
+ * Java 21 - Allows case labels with patterns (eg. Integer i)
+ */
 static String format21Value(Object obj) {
         return switch (obj) {
         case Integer i -> String.format("Integer %d", i);
@@ -44,7 +52,12 @@ static String format21Value(Object obj) {
         };
 }
 
-// Prior to Java 21
+/**
+ * Prior to Java 21 -
+ * switch statements and expressions
+ * throws NullPointerException if
+ * the selector expression evaluates to null
+ */
 static void generateResponse(String s) {
         if (s == null) {
             out.println("Nothing to say!");
@@ -56,7 +69,9 @@ static void generateResponse(String s) {
         }
 }
 
-// Java 21
+/** Java 21
+ * Allows a new null case label
+ */
 static void generate21Response(String s) {
         switch (s) {
         case null           -> out.println("Nothing to say!");
@@ -66,7 +81,11 @@ static void generate21Response(String s) {
 }
 
 
-// Prior to Java 21
+/** Java 21
+ * Pattern case label can apply to many values
+ * Leads to conditional code on the
+ * right-hand side of a switch rule
+ */
 static void testInput(String response) {
         switch (response) {
         case null -> { out.println("Nothing to say!"); }
@@ -81,7 +100,11 @@ static void testInput(String response) {
     }
 }
 
-// Java 21
+/** Java 21
+ * We can rewrite the above code using guards.
+ * Allows when clauses in switch blocks to
+ * specify guards to pattern case labels
+ */
 static void test21Input(String response) {
         switch (response) {
         case null -> { out.println("Nothing to say!"); }
@@ -100,7 +123,13 @@ static void test21Input(String response) {
 }
 
 
-// Java 21
+/** Java 21
+ * This leads to a more readable style of
+ * switch programming where the complexity of
+ * the test appears on the left of a switch rule, and
+ * the logic that applies if that test is satisfied is
+ * on the right of a switch rule
+ */
 static void test21InputEnhanced(String response) {
         switch (response) {
         case null -> { out.println("Nothing to say!"); }
@@ -124,13 +153,24 @@ static void test21InputEnhanced(String response) {
         }
 }
 
-
-// As of Java 21
+/**
+ * Given, the following interface and its implementations
+ */
 sealed interface GameClassification
         permits IndoorGame, OutdoorGame {}
 public enum IndoorGame implements GameClassification
 { BOARD, BALL, VIDEO, PUZZLE }
 final class OutdoorGame implements GameClassification {}
+
+/** Java 21
+ * Allows qualified names of enum constants to
+ * appear as case constants (eg. IndoorGame.BOARD)
+ *
+ * Dropped the requirement that the selector expression be
+ * of an enum type when the name of one of that enum's constants is
+ * used as a case constant
+ * @param c
+ */
 
 static void exhaustiveSwitchWithoutEnumSupport(GameClassification c) {
         switch (c) {
@@ -155,14 +195,14 @@ static void exhaustiveSwitchWithoutEnumSupport(GameClassification c) {
 
 // As of Java 21
 
-        /**
-         * We therefore relax the requirement that the
-         * selector expression be of the enum type and
-         * we allow case constants to use
-         * qualified names of enum constants.
-         * @param c
-         */
-        static void exhaustiveSwitchWithBetterEnumSupport(GameClassification c) {
+/**
+ * Relaxed the requirement that the
+ * selector expression be of the enum type and
+ * we allow case constants to use
+ * qualified names of enum constants.
+ * @param c
+ */
+static void exhaustiveSwitchWithBetterEnumSupport(GameClassification c) {
         switch (c) {
                 case IndoorGame.BOARD -> {
                         out.println("It's BOARD");
