@@ -1,5 +1,6 @@
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.Arrays;
 
 void main(){
 
@@ -27,7 +28,7 @@ void main(){
         builder.append("Mommy Shark\n");
         builder.repeat("Daddy Shark, doo-doo, doo-doo\n",3);
         builder.append("Daddy Shark\n");
-        System.out.println(builder.toString());
+        print(builder.toString());
 
 
         // Character isEmoji
@@ -39,13 +40,13 @@ void main(){
             // https://bugs.openjdk.org/browse/JDK-8305107
             // https://git.openjdk.org/jdk/commit/ee3023359caed3be4fe4cd829f04ede99d17ae86
 
-        System.out.println(Character.isLetter('A')); // true
+        print(Character.isLetter('A')); // true
         String java = "I ❤️ ☕ Code";
-        System.out.println(java);
+        print(java);
         var emojiCodePoint = Character.codePointAt(
                                 java , 5); // Coffee emoji
-        System.out.println(emojiCodePoint); // 9749
-        System.out.println(
+        print(emojiCodePoint); // 9749
+        print(
                 Character.isEmoji(
                         emojiCodePoint)); // true
 
@@ -59,7 +60,7 @@ void main(){
             "ExtendedPictographic": "\{Character.isExtendedPictographic(ecp)}"
         }
         """;
-        System.out.println(emojiJSON);
+        print(emojiJSON);
 
         // Regex for emoji
         /**
@@ -74,7 +75,7 @@ void main(){
 
         Matcher emojiMatcher = emojiPattern
                                 .matcher("☕");
-        System.out.println(emojiMatcher.matches());//true
+        print(emojiMatcher.matches());//true
 
         String comment = "I ❤️ ☕ Code";
         boolean containsEmoji = comment
@@ -83,5 +84,45 @@ void main(){
                                 .anyMatch(c -> emojiPattern
                                     .matcher(String.valueOf(c))
                                     .matches());
-        System.out.println(containsEmoji);//true
+        print(containsEmoji);//true
+
+
+        /**
+         * JDK-8305488
+         * Add split() variants that keep the delimiters to
+         * String and j.u.r.Pattern
+         * Commit: https://git.openjdk.org/jdk/commit/93ee19f58aa8c436c2960d171ba4646a374aa2e3
+         * Methods Added to String class -
+         * - splitWithDelimiters(String regex, int limit)
+         * Methods Added to Pattern class -
+         * - splitWithDelimiters(String regex, int limit)         *
+         */
+
+        var telegramMessage = """
+                              GOT JAVA 21 CERTIFICATION TODAY STOP
+                              POSTED TO LINKEDIN STOP
+                              HIGH PAYING JOB FOLLOWS STOP
+                              """;
+        var splitMsg = telegramMessage.split("STOP", 0);
+        print(Arrays.toString(splitMsg));
+
+        splitMsg = telegramMessage.
+                        splitWithDelimiters("STOP", 0);
+        print(Arrays.toString(splitMsg));
+
+        /**
+         * JDK-8303650
+         * Add String.indexOf(String str, int beginIndex, int endIndex)
+         * Add an indexOf(String,int,int) variant allowing to specify both
+         * a lower and an upper bound on the search.
+         * Methods Added to String class -
+         *     indexOf(String str, int beginIndex, int endIndex)
+         * Commit: https://github.com/openjdk/jdk/commit/4bf1fbb06d63b4c52bfd3922beb2adf069e25b09
+         */
+        print(telegramMessage.indexOf("21", 0, 10));//-1
+        print(telegramMessage.indexOf("21", 0, 15));//9
+        }
+
+static void print(Object object){
+        System.out.println(object);
         }
