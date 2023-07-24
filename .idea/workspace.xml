@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="JEP 441: Pattern Matching for switch">
+    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/PatternMatchSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/PatternMatchSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SimpleHelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SimpleHelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/UnnamedPatternsVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/UnnamedPatternsVariables.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688275432970</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern">
+      <created>1688314891720</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1688314891720</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +221,7 @@
     <MESSAGE value="Java 21 Makes coding Emoji  based logic easier via JDK-8303018 - Unicode Emoji Properties" />
     <MESSAGE value="Java 21 Makes coding Emoji  based logic easier to use with Regular Expression via JDK-8305107 - Emoji related binary properties in RegEx" />
     <MESSAGE value="JEP 441: Pattern Matching for switch" />
-    <option name="LAST_COMMIT_MESSAGE" value="JEP 441: Pattern Matching for switch" />
+    <MESSAGE value="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern" />
   </component>
 </project>

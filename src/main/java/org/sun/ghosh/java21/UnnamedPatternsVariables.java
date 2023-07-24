@@ -36,7 +36,7 @@ public class UnnamedPatternsVariables {
         Building destination = new Building("Diamond Heights",
                                         new GeoLocation(17.43543, 78.47551, 5),
                                         BuildingType.APARTMENT);
-        // Earlier code does not use BuildingType type
+        // Code does not use BuildingType type
         if (destination instanceof Building(String s,
                                             GeoLocation loc,
                                             BuildingType type)) {
@@ -64,7 +64,7 @@ public class UnnamedPatternsVariables {
                     Building(String name,
                              GeoLocation(double latitude,
                                          double longitude,
-                                                      _),
+                                         _) ,
                              BuildingType _)) {
             System.out.println(String
                     .format("Your destination, %s, is at Location (%f, %f)",
@@ -84,19 +84,19 @@ public class UnnamedPatternsVariables {
         // Unnamed pattern variables are helpful when a
         // switch executes the same action for multiple cases
 
-
-        AppPayment<? extends Payment> payment = new AppPayment<UPIPayment>(new UPIPayment());
+        AppPayment<? extends Payment> payment =
+                new AppPayment<UPIPayment>(new UPIPayment());
 
         // Existing way
         switch (payment) {
             case AppPayment(UPIPayment upi)   ->
-                    System.out.println("₹ deducted from VPA. Details: " +
+                    System.out.println("₹100 deducted from VPA. Details: " +
                             payment);
             case AppPayment(WalletPayment wallet)  ->
-                    System.out.println("₹ deducted from Wallet. Details: " +
+                    System.out.println("₹100 deducted from Wallet. Details: " +
                             payment);
             case AppPayment(CardPayment card) ->
-                    System.out.println("₹ deducted from VISA. Details: " +
+                    System.out.println("₹100 deducted from VISA card. Details: " +
                             payment);
         }
 

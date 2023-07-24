@@ -1,6 +1,11 @@
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.random.RandomGenerator;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 void main(){
 
@@ -89,6 +94,7 @@ void main(){
 
         /**
          * JDK-8305488
+         * https://bugs.openjdk.org/browse/JDK-8305488
          * Add split() variants that keep the delimiters to
          * String and j.u.r.Pattern
          * Commit: https://git.openjdk.org/jdk/commit/93ee19f58aa8c436c2960d171ba4646a374aa2e3
@@ -112,6 +118,7 @@ void main(){
 
         /**
          * JDK-8303650
+         * https://bugs.openjdk.org/browse/JDK-8303650
          * Add String.indexOf(String str, int beginIndex, int endIndex)
          * Add an indexOf(String,int,int) variant allowing to specify both
          * a lower and an upper bound on the search.
@@ -119,8 +126,32 @@ void main(){
          *     indexOf(String str, int beginIndex, int endIndex)
          * Commit: https://github.com/openjdk/jdk/commit/4bf1fbb06d63b4c52bfd3922beb2adf069e25b09
          */
-        print(telegramMessage.indexOf("21", 0, 10));//-1
-        print(telegramMessage.indexOf("21", 0, 15));//9
+        var linkedInMessage = """
+                              GOT JAVA 21 CERTIFICATION TODAY ⚡️
+                              POSTED TO LINKEDIN 📢
+                              HIGH PAYING JOB FOLLOWS 🔥!!!
+                              """;
+        print(linkedInMessage.indexOf("21", 0, 10));//-1
+        print(linkedInMessage.indexOf("21", 0, 15));//9
+
+        /**
+         * JDK-8294694, JDK-8294693
+         * Add Collections.shuffle overload that accepts RandomGenerator interface
+         * https://inside.java/2023/06/22/newscast-51/
+         * Collections.shuffle(List, RandomGenerator) static method is added to be
+         * able to conveniently shuffle lists using RandomGenerator interface.
+         *
+         * Commit: https://git.openjdk.org/jdk/commit/67b1c890b3351c1b1317477dd12316d18c01dd72
+         */
+
+        List<String> deckOfCards = new ArrayList<>(List.of("♥️️", "♤", "♦️",
+                           "🃏", "♧", "🂡", "🃁", "🃑", "🂱"));
+        var randomizer = RandomGenerator.getDefault();
+        Collections.shuffle(deckOfCards, randomizer);
+        deckOfCards.forEach(card -> print(card
+                                          .codePoints()
+                                          .mapToObj(c -> (int) c)
+                                          .collect(Collectors.toList())));
         }
 
 static void print(Object object){

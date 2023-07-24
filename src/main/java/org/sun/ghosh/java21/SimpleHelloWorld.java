@@ -15,17 +15,21 @@ public class SimpleHelloWorld {
     }
 }
 */
-
+/*
+    void main(){
+        System.out.println("  Hello  ".trim());
+    }
+ */
     /**
-     * First, we enhance the protocol by which
-     * Java programs are launched to allow:
+     * First, the protocol was enhanced by which
+     * Java programs are launched - to allow:
 
           "instance main methods"
 
      * Such methods are:
-     * -X- not "static"
-     * -X- "public" (optional)
-     * -X- "String[] args parameter" (optional)
+     * -x- not "static"
+     * -x- "public" (optional)
+     * -x- "String[] args parameter" (optional)
 
      * So we have:
      */
@@ -38,17 +42,14 @@ class HelloWorld {
                    I am running in a main() without keywords
                    - public
                    - static
-                   - String[] args parameter
+                   - String[] args - method parameter
                    """;
         System.out.println(s);
     }
 }
 */
-
-
-
     /**
-     * Second, we introduce
+     * Second, introduce
 
             "unnamed classes"
 
@@ -57,8 +58,7 @@ class HelloWorld {
      * So we have:
      */
 
-//        /*
-
+        /*
         void main() {
          String s = """
            Hello, World!
@@ -70,13 +70,13 @@ class HelloWorld {
            - String[] args parameter
            """;
          System.out.println(s);
+         System.out.println(this.getClass().getName());
         }
 
-//        */
-
+    */
 
     /*
-    java --source 21 --enable-preview Main.java
+    java --source 21 --enable-preview SimpleHelloWorld.java
      */
 
 /**
@@ -84,21 +84,22 @@ class HelloWorld {
  * public, protected, or default (i.e., package) access
  */
 
-        /*
-
+/*
         public void main() {
-            System.out.println("Hello, World!");
+            System.out.println("Hello, World! - Public");
         }
+*/
 
+/*
         protected void main() {
-            System.out.println("Hello, World!");
+            System.out.println("Hello, World! - Protected");
         }
-
+*/
+/*
         void main() {
-            System.out.println("Hello, World!");
+            System.out.println("Hello, World! - Default");
         }
-
-        */
+*/
 
 /**
  * If a launched class contains no static main method
@@ -107,17 +108,16 @@ class HelloWorld {
  * then invoke that method
  */
 
-        /*
-
+/*
         static void main(String[] args) {
-            System.out.println("Hello, World!");
+            System.out.println("Hello, World! with Args");
         }
-
+*/
+/*
         static void main() {
-            System.out.println("Hello, World!");
+            System.out.println("Hello, World! without Args");
         }
-
-        */
+*/
 
 
 /**
@@ -137,15 +137,16 @@ class HelloWorld {
  */
 
 /**
- * A source file named HelloWorld.java containing
+ * A source file named SimpleHelloWorld.java containing
  * an unnamed class can be launched
  * with the source-code launcher, like so:
  *
- * $ java HelloWorld.java
+ * $ java SimpleHelloWorld.java
  *
  * The Java compiler will compile that file
- * to the launchable class file HelloWorld.class.
- * In this case the compiler chooses HelloWorld
+ * to the launchable class file SimpleHelloWorld.class.
+ *
+ * In this case the compiler chooses SimpleHelloWorld
  * for the class name as an implementation detail,
  * but that name still cannot be used
  * directly in Java source code.

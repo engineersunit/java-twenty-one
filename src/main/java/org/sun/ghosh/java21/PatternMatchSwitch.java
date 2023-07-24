@@ -12,12 +12,14 @@ void main(){
         print(formatValue("Java 21"));
         print(format21Value(Integer.MAX_VALUE));
         generateResponse(null);
-        generate21Response("Hello");
+        generate21Response(null);
         testInput("Yes");
         test21Input("No");
         print(validateInputAndRespond(null));
+        switchClassicEnums(IndoorGame.BOARD);
         exhaustiveSwitchWithoutEnumSupport(IndoorGame.BALL);
         exhaustiveSwitchWithBetterEnumSupport(IndoorGame.PUZZLE);
+        qualifiedEnumSwitch(Coin.TAILS);
 }
 
 static void print(Object object){
@@ -35,7 +37,7 @@ static String formatValue(Object obj) {
             formatted = String.format("Integer %d", i);
         } else if (obj instanceof Long l) {
             formatted = String.format("Long %d", l);
-        } else if (obj instanceof Double d) {
+        }else if (obj instanceof Double d) {
             formatted = String.format("Double %f", d);
         } else if (obj instanceof String s) {
             formatted = String.format("String %s", s);
@@ -48,11 +50,11 @@ static String formatValue(Object obj) {
  */
 static String format21Value(Object obj) {
         return switch (obj) {
-        case Integer i -> String.format("Integer %d", i);
-        case Long l    -> String.format("Long %d", l);
-        case Double d  -> String.format("Double %f", d);
-        case String s  -> String.format("String %s", s);
-        default        -> obj.toString();
+           case Integer i -> String.format("Integer %d", i);
+           case Long l    -> String.format("Long %d", l);
+           case Double d  -> String.format("Double %f", d);
+           case String s  -> String.format("String %s", s);
+           default        -> obj.toString();
         };
 }
 
@@ -68,8 +70,8 @@ static void generateResponse(String s) {
             return;
         }
         switch (s) {
-        case "Hello", "Bye" -> print("See you!");
-        default             -> print("Same to you!");
+           case "Hello", "Bye" -> print("See you!");
+           default             -> print("Same to you!");
         }
 }
 
@@ -111,18 +113,16 @@ static void testInput(String response) {
  */
 static void test21Input(String response) {
         switch (response) {
-        case null -> print("Nothing to say!");
-        case String s
-        when s.equalsIgnoreCase("YES") -> {
-                print("Welcome!");
-        }
-        case String s
-        when s.equalsIgnoreCase("NO") -> {
-                print("Good Bye!");
-        }
-        case String s -> {
-                print("Retry!");
-        }
+           case null -> print("Nothing to say!");
+           case String s
+              when s.equalsIgnoreCase("YES") -> {
+                 print("Welcome!");
+           }
+           case String s
+              when s.equalsIgnoreCase("NO") -> {
+                 print("Good Bye!");
+           }
+           case String s -> print("Retry!");
 }
 }
 
@@ -140,9 +140,9 @@ static String validateInputAndRespond(String response) {
         case "y", "Y" -> "Welcome!";
         case "n", "N" -> "Good Bye!";
         case String s when
-         s.equalsIgnoreCase("YES") -> "Welcome!";
+           s.equalsIgnoreCase("YES") -> "Welcome!";
         case String s when
-         s.equalsIgnoreCase("NO")  -> "Good Bye!";
+           s.equalsIgnoreCase("NO")  -> "Good Bye!";
         case String s -> "Retry!";
         };
 }
@@ -156,14 +156,29 @@ public enum IndoorGame implements GameClassification
         { BOARD, BALL, VIDEO, PUZZLE }
 final class OutdoorGame implements GameClassification {}
 
-/** Java 21
- * Allows qualified names of enum constants to
- * appear as case constants (eg. IndoorGame.BOARD)
- *
- * Dropped the requirement that the selector expression be
- * of an enum type when the name of one of that enum's constants is
- * used as a case constant
- * @param c
+/**
+ * Prior to Java 21 -
+ * The selector expression of the switch must be of
+ * the enum type, and the labels must be simple names of
+ * the enum's constants
+ */
+
+static void switchClassicEnums(IndoorGame c) {
+        switch (c) {
+                case BOARD ->
+                        print("It's BOARD");
+                case BALL  ->
+                        print("It's BALL");
+                case VIDEO ->
+                        print("It's VIDEO");
+                default    -> print("It's PUZZLE");
+        }
+}
+
+/**
+ * This code would be more readable if
+ * we could have a separate case for each
+ * enum constant rather than lots of guarded patterns
  */
 
 static void exhaustiveSwitchWithoutEnumSupport(GameClassification c) {
@@ -184,6 +199,31 @@ static void exhaustiveSwitchWithoutEnumSupport(GameClassification c) {
 
 
 // As of Java 21
+/** Java 21
+ * Allows qualified names of enum constants to
+ * appear as case constants (eg. IndoorGame.BOARD)
+ *
+ * Dropped the requirement that the selector expression be
+ * of an enum type when the name of one of that enum's constants is
+ * used as a case constant
+ * @param c
+ */
+
+static void exhaustiveSwitchWithBetterEnumSupport(GameClassification c) {
+        switch (c) {
+            case IndoorGame.BOARD ->
+                    print("It's BOARD");
+            case IndoorGame.BALL  ->
+                    print("It's BALL");
+            case IndoorGame.VIDEO ->
+                    print("It's VIDEO");
+            case IndoorGame.PUZZLE->
+                    print("It's PUZZLE");
+            case OutdoorGame t    ->
+                    print("It's a OutdoorGame");
+        }
+}
+
 
 /**
  * Relaxed the requirement that the
@@ -192,17 +232,17 @@ static void exhaustiveSwitchWithoutEnumSupport(GameClassification c) {
  * qualified names of enum constants.
  * @param c
  */
-static void exhaustiveSwitchWithBetterEnumSupport(GameClassification c) {
+
+sealed interface Currency permits Coin {}
+enum Coin implements Currency { HEADS, TAILS }
+
+static void qualifiedEnumSwitch(Currency c) {
         switch (c) {
-                case IndoorGame.BOARD ->
-                        print("It's BOARD");
-                case IndoorGame.BALL  ->
-                        print("It's BALL");
-                case IndoorGame.VIDEO ->
-                        print("It's VIDEO");
-                case IndoorGame.PUZZLE->
-                        print("It's PUZZLE");
-                case OutdoorGame t    ->
-                        print("It's a OutdoorGame");
+           case Coin.HEADS -> {// Qualified name of enum constant as a label
+                System.out.println("Heads");
+           }
+           case Coin.TAILS -> {
+                System.out.println("Tails");
+           }
         }
 }
