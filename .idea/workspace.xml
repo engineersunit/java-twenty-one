@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern">
+      <change afterPath="$PROJECT_DIR$/scripts/AutomateMyTasks.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/MyVirtualThreads.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StreamWorks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StreamsParallel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/VirtualHTTPServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/PatternMatchSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/PatternMatchSwitch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SimpleHelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SimpleHelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/UnnamedPatternsVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/UnnamedPatternsVariables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StringTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StringTemplates.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +33,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -32,6 +44,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,13 +67,18 @@
     <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/util/ArrayList.java" root0="SKIP_INSPECTION" />
     <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/util/Arrays.java" root0="SKIP_INSPECTION" />
     <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/util/Objects.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2PYRuoGzFfpfs0SEYIUsU4ONA8f" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -64,17 +88,118 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Application.StreamWorks.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StreamsParallel.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build java-twenty-one.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Upgrade Gradle wrapper.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.java-twenty-one [:VirtualHTTPServer.main()].executor&quot;: &quot;Run&quot;,
+    &quot;JavaClassFindUsagesOptions.isDerivedClasses&quot;: &quot;true&quot;,
+    &quot;JavaClassFindUsagesOptions.isFieldsUsages&quot;: &quot;true&quot;,
+    &quot;JavaClassFindUsagesOptions.isMethodsUsages&quot;: &quot;true&quot;,
+    &quot;JavaClassFindUsagesOptions.isSearchForTextOccurrences&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.2094811&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
 }</component>
+  <component name="RunManager" selected="Application.VirtualHTTPServer">
+    <configuration name="StreamWorks" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
+      <option name="MAIN_CLASS_NAME" value="StreamWorks" />
+      <module name="java-twenty-one.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamsParallel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StreamsParallel" />
+      <module name="java-twenty-one.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VirtualHTTPServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sun.ghosh.java21.VirtualHTTPServer" />
+      <module name="java-twenty-one.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.sun.ghosh.java21.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java-twenty-one [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="--enable-preview --source 21" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="java-twenty-one [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.VirtualHTTPServer" />
+        <item itemvalue="Application.StreamWorks" />
+        <item itemvalue="Gradle.java-twenty-one [build]" />
+        <item itemvalue="Gradle.java-twenty-one [clean]" />
+        <item itemvalue="Application.StreamsParallel" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-5b172459f563-294ff687" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -196,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688314891720</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern">
+      <created>1690171962409</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1690171962409</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,5 +355,9 @@
     <MESSAGE value="JEP 441: Pattern Matching for switch" />
     <MESSAGE value="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern" />
     <option name="LAST_COMMIT_MESSAGE" value="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

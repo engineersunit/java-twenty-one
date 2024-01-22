@@ -136,6 +136,7 @@ void main(){
 
         /**
          * JDK-8294694, JDK-8294693
+         * https://bugs.openjdk.org/browse/JDK-8294694
          * Add Collections.shuffle overload that accepts RandomGenerator interface
          * https://inside.java/2023/06/22/newscast-51/
          * Collections.shuffle(List, RandomGenerator) static method is added to be
@@ -145,7 +146,7 @@ void main(){
          */
 
         List<String> deckOfCards = new ArrayList<>(List.of("♥️️", "♤", "♦️",
-                           "🃏", "♧", "🂡", "🃁", "🃑", "🂱"));
+                                             "🃏", "♧", "🂡", "🃁", "🃑", "🂱"));
         var randomizer = RandomGenerator.getDefault();
         Collections.shuffle(deckOfCards, randomizer);
         deckOfCards.forEach(card -> print(card

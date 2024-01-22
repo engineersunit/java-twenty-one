@@ -7,10 +7,11 @@ version = '1.0-SNAPSHOT'
 
 compileJava {
     options.compilerArgs.addAll(
-            ['--enable-preview',
-             '--add-modules', 'jdk.incubator.concurrent'
+            ['--enable-preview'
             ])
 }
+
+
 
 repositories {
     mavenCentral()
@@ -18,8 +19,9 @@ repositories {
 
 dependencies {
     implementation('org.openjdk.jol:jol-core:0.10')
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation group: 'jakarta.json', name: 'jakarta.json-api', version: '2.1.2'
+    // https://mvnrepository.com/artifact/org.eclipse.parsson/parsson
+    implementation group: 'org.eclipse.parsson', name: 'parsson', version: '1.1.4'
 }
 
 test {

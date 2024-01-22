@@ -10,7 +10,6 @@ import java.time.format.DateTimeFormatter;
 import jakarta.json.JsonReader;
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
-import jakarta.json.JsonException;
 
 import java.lang.StringTemplate;
 
@@ -89,8 +88,8 @@ public class StringTemplates {
         // Embedded expressions can be strings
         String firstName = "Sunit";
         String lastName = "Ghosh";
-        String fullName = STR. "\{firstName} \{lastName}";
-        String sortName = STR. "\{lastName}, \{firstName}";
+        String fullName = STR."\{firstName} \{lastName}";
+        String sortName = STR."\{lastName}, \{firstName}";
         System.out.println(fullName);
         System.out.println(sortName);
 

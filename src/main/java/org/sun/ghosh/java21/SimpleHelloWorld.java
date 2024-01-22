@@ -1,4 +1,4 @@
-/**
+/*
  * JEP 445: Unnamed Classes and Instance Main Methods (Preview)
  * https://openjdk.org/jeps/445
  * JIRA: JEP 445: Unnamed Classes and Instance Main Methods (Preview)
@@ -6,21 +6,23 @@
  * GitHub Pull
  * https://github.com/openjdk/jdk/pull/13689
  */
-/*
-package org.sun.ghosh.java21;
+//package org.sun.ghosh.java21;
 
-public class SimpleHelloWorld {
+/*public class SimpleHelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        System.out.println("""
+                           Hello,
+                             Complex
+                             World!""");
     }
-}
-*/
-/*
+}*/
     void main(){
-        System.out.println("  Hello  ".trim());
+        System.out.println("""
+                           Hello,
+                             Simple
+                             World!""");
     }
- */
-    /**
+    /*
      * First, the protocol was enhanced by which
      * Java programs are launched - to allow:
 
@@ -48,7 +50,7 @@ class HelloWorld {
     }
 }
 */
-    /**
+    /*
      * Second, introduce
 
             "unnamed classes"
@@ -79,7 +81,7 @@ class HelloWorld {
     java --source 21 --enable-preview SimpleHelloWorld.java
      */
 
-/**
+/*
  * Allow the main method of a launched class to have
  * public, protected, or default (i.e., package) access
  */
@@ -101,7 +103,7 @@ class HelloWorld {
         }
 */
 
-/**
+/*
  * If a launched class contains no static main method
  * with a String[] parameter but does contain a
  * static main method with no parameters,
@@ -120,23 +122,23 @@ class HelloWorld {
 */
 
 
-/**
-* Unnamed classes
-  * In the Java language, every class resides
-  * in a package and every package resides in a module
-* */
+/*
+ Unnamed classes
+   In the Java language, every class resides
+   in a package and every package resides in a module
+ */
 
-/** An unnamed class resides in the unnamed package,
+/* An unnamed class resides in the unnamed package,
    and the unnamed package resides in the unnamed module
  */
 
-/**
+/*
  * While there can be only one unnamed package and
  * only one unnamed module, there can be multiple
  * unnamed classes in the unnamed module
  */
 
-/**
+/*
  * A source file named SimpleHelloWorld.java containing
  * an unnamed class can be launched
  * with the source-code launcher, like so:
@@ -152,7 +154,7 @@ class HelloWorld {
  * directly in Java source code.
  */
 
-/**
+/*
  * Eliminating the main method altogether may seem
  * like the natural next step, but it would work against
  * the goal of gracefully evolving a first Java program
