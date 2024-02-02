@@ -15,8 +15,7 @@ void main(){
         int availableProcessors=Runtime.getRuntime().availableProcessors();
         print(availableProcessors); // 16
 
-        Properties systemProperties=System.getProperties();
-        /*
+        Properties systemProperties=System.getProperties();/*
          * The number of platform threads available for scheduling virtual threads.
          * It defaults to the number of available processors.
          */

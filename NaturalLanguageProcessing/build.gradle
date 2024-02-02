@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.sun.ghosh.java21.nlp'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jsoup:jsoup:1.17.2'
+}
+
+test {
+    useJUnitPlatform()
+}

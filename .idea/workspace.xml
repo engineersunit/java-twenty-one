@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern">
-      <change afterPath="$PROJECT_DIR$/scripts/AutomateMyTasks.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/MyVirtualThreads.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StreamWorks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StreamsParallel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/VirtualHTTPServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/NewAPIChanges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SimpleHelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/SimpleHelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StringTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/StringTemplates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/MyVirtualThreads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/MyVirtualThreads.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +29,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="java-twenty-one" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -82,7 +78,10 @@
   <component name="ProjectId" id="2PYRuoGzFfpfs0SEYIUsU4ONA8f" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
@@ -92,7 +91,11 @@
     &quot;Application.StreamsParallel.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Build java-twenty-one.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Upgrade Gradle wrapper.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.java-twenty-one [:GenerationalZGarbageCollector.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.java-twenty-one [:VirtualHTTPServer.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.java-twenty-one [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.java-twenty-one [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.java-twenty-one:NaturalLanguageProcessing [:NaturalLanguageProcessing:Main.main()].executor&quot;: &quot;Run&quot;,
     &quot;JavaClassFindUsagesOptions.isDerivedClasses&quot;: &quot;true&quot;,
     &quot;JavaClassFindUsagesOptions.isFieldsUsages&quot;: &quot;true&quot;,
     &quot;JavaClassFindUsagesOptions.isMethodsUsages&quot;: &quot;true&quot;,
@@ -103,25 +106,38 @@
     &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.2094811&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.VirtualHTTPServer">
-    <configuration name="StreamWorks" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
-      <option name="MAIN_CLASS_NAME" value="StreamWorks" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="GenerationalZGarbageCollector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sun.ghosh.java21.GenerationalZGarbageCollector" />
       <module name="java-twenty-one.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.sun.ghosh.java21.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamsParallel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StreamsParallel" />
-      <module name="java-twenty-one.main" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sun.ghosh.java21.nlp.Main" />
+      <module name="java-twenty-one.NaturalLanguageProcessing.main" />
+      <option name="VM_PARAMETERS" value="-Djava.net.useSystemProxies=true" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.sun.ghosh.java21.nlp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,7 +182,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -183,22 +199,22 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.GenerationalZGarbageCollector" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.VirtualHTTPServer" />
+      <item itemvalue="Gradle.java-twenty-one [build]" />
+      <item itemvalue="Gradle.java-twenty-one [clean]" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.VirtualHTTPServer" />
-        <item itemvalue="Application.StreamWorks" />
-        <item itemvalue="Gradle.java-twenty-one [build]" />
         <item itemvalue="Gradle.java-twenty-one [clean]" />
-        <item itemvalue="Application.StreamsParallel" />
+        <item itemvalue="Gradle.java-twenty-one [build]" />
+        <item itemvalue="Gradle.java-twenty-one [build]" />
+        <item itemvalue="Application.GenerationalZGarbageCollector" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-5b172459f563-294ff687" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -328,7 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690171962409</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern">
+      <option name="closed" value="true" />
+      <created>1705908335303</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1705908335303</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
