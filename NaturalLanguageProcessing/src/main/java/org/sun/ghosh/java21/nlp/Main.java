@@ -47,17 +47,29 @@ public class Main {
         // Step 3 - Connect to the URL and get the content
         String textContent = getURLContentAsText(url);
 
-        // Step 4 - Write the content to a local file
+        // Step 5 - Pre-process the text to remove characters other than alphabets and numbers
+        textContent = textContent.toLowerCase()
+                .replaceAll("[^a-z -]", "")
+                .replaceAll("\\s+", " ")
+                .trim();
+
+        // Step 6 - Write the content to a local file
         writeToFile(textContent, readRawContent ? OUTPUT_FILE_PATH_RAW_HTML : OUTPUT_FILE_PATH_TEXT);
 
-        // Step 5 - Compute NLP statistics on the content
+        // Step 7 - Compute NLP statistics on the content
         log("""
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 Natural Language Processing Statistics
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%""");
+
+        StringBuilder sbNLPStats = new StringBuilder("""
+                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                Natural Language Processing Statistics
+                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%""");
+        sbNLPStats.append("\n\nFor Source URL: ").append(url.toExternalForm());
         // Word token is an instance of a word in a text or a sequence of words
         String[] words = textContent.split(" ");
-        log("Word Count (Word Tokens): " + words.length);
+        sbNLPStats.append("\n\nWord Count (Word Tokens): ").append(words.length);
 
         /*
         Word types refers to the unique, distinct words or lexical items in a text or corpus
@@ -65,22 +77,21 @@ public class Main {
          */
         List<String> wordsList = Arrays.asList(words);
         Set<String> uniqueWords = new HashSet<>(wordsList);
-        log("Unique Word Count (Word Types): " + uniqueWords.size());
+        sbNLPStats.append("\n\nUnique Word Count (Word Types): ").append(uniqueWords.size());
 
         /*
         Type-token ratio (TTR) is a measure of lexical diversity in a text corpus
         It is calculated by dividing the number of unique words (types) in a corpus
         by the total number of words (tokens) in that corpus
          */
-        log("TTR - Type-Token Ratio: " + ((float) uniqueWords.size() / (float) words.length));
+        sbNLPStats.append("\n\nTTR - Type-Token Ratio: ").append((float) uniqueWords.size() / (float) words.length);
 
         Map<String, Long> wordFrequencyMap = wordsList.stream()
-                .map(String::toLowerCase)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        log("Words by frequency: ");
-        wordFrequencyMap.forEach((key, value) -> log(key + " " + value));
+        /*log("Words by frequency: ");
+        wordFrequencyMap.forEach((key, value) -> log(key + " " + value));*/
 
-        log("Words by frequency (sorted): ");
+        sbNLPStats.append("\n\nWords by frequency (sorted - descending): \n");
         LinkedHashMap<String, Long> countByWordSorted = wordFrequencyMap.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
@@ -92,12 +103,12 @@ public class Main {
                         },
                         LinkedHashMap::new
                 ));
-        StringBuilder sbWordFrequency = new StringBuilder();
+
         countByWordSorted.forEach((key, value) -> {
-            log(key + " " + value);
-            sbWordFrequency.append(key).append(" ").append(value).append("\n");
+//            log(key + " " + value);
+            sbNLPStats.append(key).append(" ").append(value).append("\n");
         });
-        writeToFile(sbWordFrequency.toString(), OUTPUT_FILE_PATH_NLP_STATS);
+        writeToFile(sbNLPStats.toString(), OUTPUT_FILE_PATH_NLP_STATS);
         log("""
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 Natural Language Processing Statistics
@@ -157,7 +168,7 @@ public class Main {
                 StringBuilder sb = new StringBuilder();
                 // Select the main text content paragraphs of the wiki
                 for (Element pElem : mainContent.select("p")) {
-                    sb.append(pElem.text());
+                    sb.append(pElem.text()).append(" ");
                 }
                 siteContent = sb.toString();
             } catch (IOException e) {

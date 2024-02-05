@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="ad714b33-276e-453d-ad02-ca9c8548ed10" name="Changes" comment="Adding NLP calculations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/MyVirtualThreads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sun/ghosh/java21/MyVirtualThreads.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NaturalLanguageProcessing/src/main/java/org/sun/ghosh/java21/nlp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/NaturalLanguageProcessing/src/main/java/org/sun/ghosh/java21/nlp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NaturalLanguageProcessing/src/main/java/org/sun/ghosh/java21/nlp/MySite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NaturalLanguageProcessing/src/main/java/org/sun/ghosh/java21/nlp/MySite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NaturalLanguageProcessing/src/main/java/org/sun/ghosh/java21/nlp/NLPStatistics.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NaturalLanguageProcessing/src/main/java/org/sun/ghosh/java21/nlp/NLPStatistics.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +351,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705908335303</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern">
+      <option name="closed" value="true" />
+      <created>1706859445670</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1706859445670</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Adding NLP calculations">
+      <option name="closed" value="true" />
+      <created>1706973076549</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1706973076549</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -378,7 +393,10 @@
     <MESSAGE value="Java 21 Makes coding Emoji  based logic easier to use with Regular Expression via JDK-8305107 - Emoji related binary properties in RegEx" />
     <MESSAGE value="JEP 441: Pattern Matching for switch" />
     <MESSAGE value="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="JDK-8305486&#10;Add split() variants that keep the delimiters to String and j.u.r.Pattern" />
+    <MESSAGE value="Adding NLP calculations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding NLP calculations" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
