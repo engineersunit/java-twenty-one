@@ -47,16 +47,16 @@ public class Main {
         // Step 3 - Connect to the URL and get the content
         String textContent = getURLContentAsText(url);
 
-        // Step 5 - Pre-process the text to remove characters other than alphabets and numbers
+        // Step 4 - Pre-process the text to remove characters other than alphabets
         textContent = textContent.toLowerCase()
                 .replaceAll("[^a-z -]", "")
                 .replaceAll("\\s+", " ")
                 .trim();
 
-        // Step 6 - Write the content to a local file
+        // Step 5 - Write the content to a local file
         writeToFile(textContent, readRawContent ? OUTPUT_FILE_PATH_RAW_HTML : OUTPUT_FILE_PATH_TEXT);
 
-        // Step 7 - Compute NLP statistics on the content
+        // Step 6 - Compute NLP statistics on the content
         log("""
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 Natural Language Processing Statistics
