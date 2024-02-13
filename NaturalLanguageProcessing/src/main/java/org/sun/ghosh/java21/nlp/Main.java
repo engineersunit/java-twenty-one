@@ -15,6 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -49,7 +50,7 @@ public class Main {
 
         // Step 4 - Pre-process the text to remove characters other than alphabets
         textContent = textContent.toLowerCase()
-                .replaceAll("[^a-z -]", "")
+                .replaceAll("[^a-z -]", " ")
                 .replaceAll("\\s+", " ")
                 .trim();
 
@@ -71,6 +72,20 @@ public class Main {
         String[] words = textContent.split(" ");
         sbNLPStats.append("\n\nWord Count (Word Tokens): ").append(words.length);
 
+        // Bigrams are group of 2 consecutive words
+        sbNLPStats.append("\n\nBigram Count: ").append(words.length - 1);
+        List<String> bigramList = new ArrayList<>(words.length / 2);
+        StringBuilder sbBigram = new StringBuilder();
+
+        for (int i = 0; i < words.length - 2; i++) {
+            sbBigram.append(words[i]).append(" ").append(words[i + 1]);
+            bigramList.add(sbBigram.toString());
+            sbBigram.setLength(0);
+        }
+
+        Set<String> uniqueBigrams = new HashSet<>(bigramList);
+        sbNLPStats.append("\n\nUnique Bigrams: ").append(uniqueBigrams.size());
+
         /*
         Word types refers to the unique, distinct words or lexical items in a text or corpus
         Word types represent the different forms or expressions that convey distinct meanings
@@ -88,10 +103,7 @@ public class Main {
 
         Map<String, Long> wordFrequencyMap = wordsList.stream()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        /*log("Words by frequency: ");
-        wordFrequencyMap.forEach((key, value) -> log(key + " " + value));*/
 
-        sbNLPStats.append("\n\nWords by frequency (sorted - descending): \n");
         LinkedHashMap<String, Long> countByWordSorted = wordFrequencyMap.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
@@ -104,10 +116,66 @@ public class Main {
                         LinkedHashMap::new
                 ));
 
-        countByWordSorted.forEach((key, value) -> {
-//            log(key + " " + value);
-            sbNLPStats.append(key).append(" ").append(value).append("\n");
-        });
+        List<String> top10MostUsedWords = countByWordSorted
+                .entrySet()
+                .stream()
+                .limit(10)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+        sbNLPStats.append("\n\nTop 10 Most Used Words: ").append(top10MostUsedWords);
+
+        LinkedHashMap<String, Long> top10MostUsedWordsWithFrequency = countByWordSorted
+                .entrySet()
+                .stream()
+                .limit(10)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (x, y) -> y, LinkedHashMap::new));
+        sbNLPStats.append("\n\nTop 10 Most Used Words (frequency): ").append(top10MostUsedWordsWithFrequency);
+
+        List<String> top10LeastUsedWords = countByWordSorted
+                .reversed()
+                .entrySet()
+                .stream()
+                .limit(10)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+        sbNLPStats.append("\n\nTop 10 Least Used Words are: ").append(top10LeastUsedWords);
+
+        LinkedHashMap<String, Long> top10LeastUsedWordsWithFrequency = countByWordSorted
+                .reversed()
+                .entrySet()
+                .stream()
+                .limit(10)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (x, y) -> y, LinkedHashMap::new));
+        sbNLPStats.append("\n\nTop 10 Least Used Words (frequency): ").append(top10LeastUsedWordsWithFrequency);
+
+        List<String> wordsWithFrequencyAsOneSortedByLength = countByWordSorted
+                .reversed()
+                .entrySet()
+                .stream()
+                .takeWhile((wordWithFreq) -> wordWithFreq.getValue() == 1)
+                .map(Map.Entry::getKey)
+                .sorted(Comparator.comparingInt(String::length).reversed())
+                .collect(Collectors.toList());
+
+        sbNLPStats.append("\n\nTop 10 Most Interesting Words: \n\n");
+        wordsWithFrequencyAsOneSortedByLength
+                .stream()
+                .limit(10)
+                .forEach(word -> sbNLPStats.append(word).append("\n"));
+
+        sbNLPStats.append("\n\nWords with Frequency as 1 (Sorted by word character length): \n\n");
+        wordsWithFrequencyAsOneSortedByLength.forEach(word -> sbNLPStats.append(word).append("\n"));
+
+        // More verbose outputs at the end
+        sbNLPStats.append("\n\nBigrams: \n\n");
+        bigramList.forEach(bigrm -> sbNLPStats.append(bigrm).append("\n"));
+
+        sbNLPStats.append("\n\nWords by frequency (sorted - descending): \n\n");
+
+        countByWordSorted.forEach((key, value) ->
+                sbNLPStats.append(key).append(" ").append(value).append("\n")
+        );
+
         writeToFile(sbNLPStats.toString(), OUTPUT_FILE_PATH_NLP_STATS);
         log("""
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
