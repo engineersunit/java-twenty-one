@@ -9,6 +9,12 @@ repositories {
     mavenCentral()
 }
 
+compileJava {
+    options.compilerArgs.addAll(
+            ['--enable-preview'
+            ])
+}
+
 dependencies {
     implementation 'org.jsoup:jsoup:1.17.2'
 }
